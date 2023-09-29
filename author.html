@@ -2,10 +2,43 @@
 <html>
 <head>
     <title>Author Entry Page</title>
+
 </head>
 
 <body>
     <h2>Author entry Sneha Kancharla</h2>
+    <form>
+        <label for="author_name">The hidden author name </label>
+        <input type="password" id="author_name" name="author_name" namevalue="Dickens">
+        <br>
+        <label for="user_guess">Guess the author</label>
+        <input type="text" id="guess-author" name="guess-author">
+        <br>
+        <input type="button" onclick="checkAuthor()" value="Check the guess">
+    </form>
+    <div id="result">Correct/Wrong?</div>
+    <script>
+        let good = 0;
+        let oops = 0;
+        function checkAuthor() {
+            const AuthorInput = document.getElementById("author_name");
+            const guessAuthorInput = document.getElementById("guess-author");
+            const resultElement = document.getElementById("result");
+            const secretAuthor = AuthorInput.value;
+            const guessedAuthor = guessAuthorInput.value;
+
+            if (secretAuthor === guessedAuthor) {
+                good++;
+                alert("You got it right!");
+            } else {
+                oops++;
+                alert("Sorry");
+            }
+            resultElement.innerHTML = `Correct Guesses: ${good}, Incorrect Guesses: ${oops}`;
+        }
+    </script>
+
 </body>
+ 
 
 </html>
