@@ -16,7 +16,7 @@
     <label for="Pool Pass">Pool Pass</label><br><br>
 </form>
 <button onclick="selectCruise()">Select a cruise</button>
-<p id="cruise_Result"></p>
+<p id="selectCruise"></p>
 <br>
 <form>
     <label for="days">Enter the number of days</label>
@@ -27,7 +27,7 @@
     
 </form>
 <button onclick="updateCruise()">Update the cruise</button>
-<p id="cruise_Select_Result"></p>
+<p id="updateCruise"></p>
 
 <!-- ------------------------------------------------------------------------------- -->
 
@@ -40,7 +40,7 @@ function selectCruise() {
     my_cruise.breakfast = document.getElementById('Breakfast').checked;
     my_cruise.pool = document.getElementById('Pool Pass').checked;
 
-    document.getElementById('cruise_Result').textContent = `${JSON.stringify(my_cruise)}`;
+    document.getElementById('selectCruise').textContent = `${JSON.stringify(my_cruise)}`;
 }
 
 function updateCruise() {
@@ -50,8 +50,7 @@ function updateCruise() {
     my_cruise["days"] = days;
     my_cruise["price"] = price;
 
-    document.getElementById('cruise_Select_Result').innerHTML = JSON.stringify(my_cruise);
-    // document.getElementById('cruise_Select_Result').textContent = `${JSON.stringify(my_cruise)}`;
+    document.getElementById('updateCruise').textContent = `${JSON.stringify(my_cruise)}`;
 }
 </script>
 
