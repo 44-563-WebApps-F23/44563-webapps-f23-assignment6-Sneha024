@@ -12,7 +12,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" 
       integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
       <style>
-        .arakuimg{
+        .keralaimg{
         width: 100px;
         height: 100px;
         cursor: pointer;
@@ -40,13 +40,13 @@
             <input class="form-control border" type="text" id="guessAuthor" name="guessAuthor" required>
            </div><br/>
            <div class="form-group">
-            <button type="button" class="btn btn-success" id="authorBtn" onclick= "checkAuthor()" >Check the guess</button>
+            <button type="button" class="btn btn-info" id="authorBtn" onclick= "checkAuthor()" >Check the guess</button>
            </div>
           </form>
           <p id="goodCounter"></p>
           <p id="oopsCounter"></p>
           <div class="img-container">
-                <img id="displayed" onclick="selectImage()" src="./araku2.jpg" alt="Display araku image" class="arakuimg"/>
+                <img id="displayed" onclick="selectImage()" src="./kerala2.jpg" alt="Display kerala image" class="keralaimg"/>
           </div>
         </div>
     </body>
@@ -61,11 +61,11 @@
             useImage = 2;
             break;
             case 2 : 
-            img1.src = "./kerala2.jpg" ;
+            img1.src = "./houston2.jpg" ;
             useImage = 3;
             break;
             case 3 : 
-            img1.src = "./araku2.jpg" ;
+            img1.src = "./kerala2.jpg" ;
             useImage = 1;
             break;
         }
@@ -92,8 +92,8 @@
         
         document.getElementById("goodCounter").innerHTML = `Good count : ${good}`;
         document.getElementById("oopsCounter").innerHTML = `Opps count : ${oops}`;
+
         
-      
     }
     function errorMsg() {
         alert("Sorry, ran out of guesses");
